@@ -1,23 +1,43 @@
-import 
+import
 
 # React Login Authentication
+
 Project sederhana React yang mengimplementasikan fitur Login menggunakan:
+
 <ul>
 <li> React
 <li> Tailwind
 <li> React Router DOM
 </ul>
 
+## Features
 
-##   Features
-
-1. Login menggunakan username dan password
-2. Authentication state menggunakan Context API
-3. Redirect ke halaman Home setelah login berhasil
-4. Routing menggunakan React Router DOM
-5. UI sederhana menggunakan Tailwind CSS
+<ul>
+<li> register menggunakan nama lengkap, username, dan password
+<li> simpan data di local storage
+<li> authentication state menggunakan context
+<li> routing menggunakan react router DOM
+<li> UI sederhana menggunakan tailwind
+</ul>
 
 ### Screenshots
 
-<img src="./public/images/loginpage.png" alt="loginpage">
-<img src="./public/images/homepage.png" alt="homepage">
+<table>
+  <tr>
+    <td align="center">
+      <img src="./public/images/register.png" alt="Register Page" width="250"/>
+      <br/>
+      <b>Register Page</b>
+    </td>
+    <td align="center">
+      <img src="./public/images/loginpage.png" alt="Login Page" width="250"/>
+      <br/>
+      <b>Login Page</b>
+    </td>
+    <td align="center">
+      <img src="./public/images/homepage.png" alt="Home Page" width="250"/>
+      <br/>
+      <b>Home Page</b>
+    </td>
+  </tr>
+</table>

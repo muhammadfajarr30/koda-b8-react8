@@ -1,18 +1,9 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import AuthContext from "../context/AuthContext" 
+import AuthContext from "../components/AuthContext" 
+import { useLocalStorage } from "../components/Hooks";
 
 
-const users = [
-  {
-    username: "hihi",
-    password: "cihuy",
-  },
-  {
-    username: "haha",
-    password: "ahoy",
-  },
-];
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -21,10 +12,12 @@ function LoginPage() {
   const navigate = useNavigate();
   const { setAuth } = useContext(AuthContext); 
 
+  const [userList] = useLocalStorage("users")
+
   const handleLogin = (e) => {
     e.preventDefault();
     
-    const existingUser = users.find(
+    const existingUser = userList.find(
       (u) => u.username === username && u.password === password
     );
 
@@ -32,7 +25,7 @@ function LoginPage() {
       setAuth({
         statusActived: true,
         user: existingUser, 
-      });
+      }); 
       navigate("/homepage");
     } else {
       alert("username atau password salah!");
@@ -92,6 +85,7 @@ function LoginPage() {
             Login
           </button>
         </form>
+        <p className="flex justify-center p-5">Belum punya akun? <span onClick={()=> navigate("/register")} className="underline cursor-pointer">Register Sekarang</span></p>
       </div>
     </div>
   );
